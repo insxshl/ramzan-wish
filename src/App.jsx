@@ -1,5 +1,5 @@
 import { Routes, Route, useNavigate, useParams } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 /* ================= HOME ================= */
 
@@ -15,7 +15,7 @@ function Home() {
 
   return (
     <div style={homeStyle.wrapper}>
-      <h1 style={homeStyle.title}>🌙 Ramzan Wish Generator</h1>
+      <h1 style={homeStyle.title}>🌙 Ramazan Wish Generator</h1>
 
       <input
         style={homeStyle.input}
@@ -44,12 +44,10 @@ function WishPage() {
     }
   };
 
-  // ✅ UPDATED SHARE FUNCTION (All Apps Support)
   const shareNow = async () => {
     const shareData = {
-      title: "Ramzan Mubarak 🌙",
-      text: `💛 Ramzan Mubarak from ${name}
-Create yours 👇`,
+      title: "Ramazan Mubarak 🌙",
+      text: `💛 Ramazan Mubarak from ${name}\nCreate yours 👇`,
       url: window.location.href,
     };
 
@@ -65,16 +63,25 @@ Create yours 👇`,
     }
   };
 
+  /* ================= NATIVE BANNER SETUP ================= */
+  useEffect(() => {
+    const script = document.createElement("script");
+    script.async = true;
+    script.setAttribute("data-cfasync", "false");
+    script.src =
+      "https://pl28760265.effectivegatecpm.com/9eac4bdba502a66fe92f84a24789345e/invoke.js";
+
+    const adContainer = document.getElementById(
+      "container-9eac4bdba502a66fe92f84a24789345e"
+    );
+    if (adContainer) adContainer.appendChild(script);
+  }, []);
+
   return (
     <div className="nightWrapper">
-
       <div className="contentCenter">
         <h1 className="arabicText">رمضان كريم</h1>
-
-        <h2 className="wishLine">
-          💛 Ramzan Mubarak from
-        </h2>
-
+        <h2 className="wishLine">💛 Ramazan Mubarak from</h2>
         <h3 className="fromName">{name}</h3>
 
         <div className="actionBox">
@@ -86,6 +93,12 @@ Create yours 👇`,
           <button onClick={createNew}>Create Yours</button>
           <button onClick={shareNow}>Share</button>
         </div>
+
+        {/* ================= NATIVE BANNER AD — Button ke niche ================= */}
+        <div
+          id="container-9eac4bdba502a66fe92f84a24789345e"
+          style={{ margin: "20px auto" }}
+        ></div>
       </div>
     </div>
   );
