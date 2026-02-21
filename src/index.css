@@ -1,0 +1,101 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #07131c, #000);
+  color: white;
+}
+
+.nightWrapper {
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+
+/* Center content */
+.contentCenter {
+  position: absolute;
+  top: 20%;
+  width: 100%;
+  text-align: center;
+  z-index: 10;
+}
+
+/* Arabic */
+.arabicText {
+  font-size: 40px;
+  color: gold;
+  text-shadow: 0 0 25px gold;
+}
+
+/* Wish */
+.wishLine {
+  font-size: 26px;
+  margin-top: 10px;
+}
+
+.fromName {
+  font-size: 34px;
+  color: gold;
+  animation: glowName 2s infinite alternate;
+}
+
+@keyframes glowName {
+  from { text-shadow: 0 0 10px gold; }
+  to { text-shadow: 0 0 30px yellow; }
+}
+
+/* Lantern Base */
+.lantern {
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 120px;
+  background: gold;
+  border-radius: 10px;
+  box-shadow: 0 0 25px gold;
+  animation: swing 3s ease-in-out infinite alternate;
+}
+
+/* Left Lantern */
+.leftLantern {
+  left: 40px;
+}
+
+/* Right Lantern */
+.rightLantern {
+  right: 40px;
+}
+
+/* Swing Animation */
+@keyframes swing {
+  from { transform: rotate(-5deg); }
+  to { transform: rotate(5deg); }
+}
+
+/* Bottom box */
+.actionBox {
+  margin-top: 30px;
+}
+
+.actionBox input {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  width: 200px;
+}
+
+.actionBox button {
+  padding: 10px 15px;
+  margin: 5px;
+  border-radius: 6px;
+  border: none;
+  background: gold;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.actionBox button:hover {
+  background: orange;
+}
