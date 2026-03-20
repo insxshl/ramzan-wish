@@ -293,14 +293,14 @@ function WishPage() {
     if (newName.trim()) navigate(`/wish/${encodeURIComponent(newName.trim())}`);
   };
 
-  /* ── FIXED: URL sirf ek baar aayega ── */
+  /* ── FINAL FIX: sirf url field, text mein URL nahi ── */
   const share = async () => {
     const url = window.location.href;
     try {
       if (navigator.share) {
         await navigator.share({
-          title: "Ramadan Mubarak 🌙",
-          text: `🌙 Ramadan Mubarak from ${decoded}!\n\nApni wish banao 👇`,
+          title: "🌙 Ramadan Mubarak!",
+          text: `💛 Ramadan Mubarak from ${decoded}!\nApni wish bhi banao 👇`,
           url: url,
         });
       } else {
