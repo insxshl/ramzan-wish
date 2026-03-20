@@ -293,11 +293,16 @@ function WishPage() {
     if (newName.trim()) navigate(`/wish/${encodeURIComponent(newName.trim())}`);
   };
 
+  /* ── FIXED: URL sirf ek baar aayega ── */
   const share = async () => {
     const url = window.location.href;
     try {
       if (navigator.share) {
-        await navigator.share({ title:"Ramadan Mubarak 🌙", text:`🌙 Ramadan Mubarak from ${decoded}!\n\nApni wish banao 👇\n${url}`, url });
+        await navigator.share({
+          title: "Ramadan Mubarak 🌙",
+          text: `🌙 Ramadan Mubarak from ${decoded}!\n\nApni wish banao 👇`,
+          url: url,
+        });
       } else {
         await navigator.clipboard.writeText(url);
         setCopied(true);
@@ -413,7 +418,7 @@ export default function App() {
   useEffect(() => {
     injectFonts();
     injectCSS();
-    injectMoneTag(); // ← Monetag Multitag only
+    injectMoneTag();
   }, []);
 
   return (
