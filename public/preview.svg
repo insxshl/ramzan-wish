@@ -1,1 +1,56 @@
-. 
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#020c1b"/>
+  <!-- stars -->
+  <circle cx="100" cy="80" r="2" fill="#FFD700" opacity="0.8"/>
+  <circle cx="200" cy="150" r="1.5" fill="#FFD700" opacity="0.6"/>
+  <circle cx="350" cy="60" r="2" fill="#FFD700" opacity="0.9"/>
+  <circle cx="500" cy="120" r="1.5" fill="#FFD700" opacity="0.7"/>
+  <circle cx="700" cy="50" r="2" fill="#FFD700" opacity="0.8"/>
+  <circle cx="850" cy="130" r="1.5" fill="#FFD700" opacity="0.6"/>
+  <circle cx="1000" cy="70" r="2" fill="#FFD700" opacity="0.9"/>
+  <circle cx="1100" cy="160" r="1.5" fill="#FFD700" opacity="0.7"/>
+  <circle cx="150" cy="300" r="1.5" fill="#FFD700" opacity="0.5"/>
+  <circle cx="400" cy="250" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="900" cy="280" r="1.5" fill="#FFD700" opacity="0.6"/>
+  <circle cx="1050" cy="350" r="2" fill="#FFD700" opacity="0.8"/>
+  <circle cx="80" cy="450" r="1.5" fill="#FFD700" opacity="0.6"/>
+  <circle cx="300" cy="500" r="2" fill="#FFD700" opacity="0.7"/>
+  <circle cx="950" cy="480" r="1.5" fill="#FFD700" opacity="0.5"/>
+  <circle cx="1150" cy="420" r="2" fill="#FFD700" opacity="0.8"/>
+
+  <!-- moon -->
+  <defs>
+    <radialGradient id="mg" cx="40%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#FFFDE7"/>
+      <stop offset="50%" stop-color="#FFD700"/>
+      <stop offset="100%" stop-color="#B8860B" stop-opacity="0.3"/>
+    </radialGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="8" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <circle cx="600" cy="200" r="120" fill="url(#mg)" filter="url(#glow)"/>
+  <circle cx="655" cy="170" r="100" fill="#020c1b"/>
+
+  <!-- star near moon -->
+  <polygon points="530,130 534,142 547,142 537,150 541,162 530,154 519,162 523,150 513,142 526,142" fill="#FFD700" filter="url(#glow)"/>
+
+  <!-- Arabic text -->
+  <text x="600" y="370" text-anchor="middle" font-family="serif" font-size="72" fill="#FFD700"
+    style="text-shadow: 0 0 30px gold;">رَمَضَانُ كَرِيم</text>
+
+  <!-- English text -->
+  <text x="600" y="440" text-anchor="middle" font-family="Georgia, serif" font-size="36"
+    fill="#D4AF37" letter-spacing="8">RAMADAN MUBARAK</text>
+
+  <!-- divider -->
+  <line x1="400" y1="470" x2="800" y2="470" stroke="#D4AF37" stroke-width="1" opacity="0.5"/>
+
+  <!-- site name -->
+  <text x="600" y="510" text-anchor="middle" font-family="Georgia, serif" font-size="24"
+    fill="rgba(255,255,255,0.4)">ramzan-wish.vercel.app</text>
+
+  <!-- border -->
+  <rect x="20" y="20" width="1160" height="590" rx="16" fill="none" stroke="#D4AF37" stroke-width="1.5" opacity="0.3"/>
+</svg>
