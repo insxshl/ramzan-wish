@@ -77,63 +77,27 @@ const injectCSS = () => {
     .r-btn:active { transform: scale(0.97); }
     .r-input:focus { outline: none; border-color: #FFD700; box-shadow: 0 0 0 3px rgba(255,215,0,0.2); }
 
-    /* AD — fixed size, no overflow */
-    .r-ad-wrap {
-      margin: 10px auto;
-      width: 100%;
-      max-width: 400px;
-      max-height: 120px;
-      overflow: hidden;
-      border-radius: 8px;
-      transform: scale(0.82);
-      transform-origin: top center;
-    }
-
     @media (max-width: 480px) {
       .r-lbody { width: 32px; height: 68px; }
       .r-lstring { height: 26px; }
       .r-lbase { width: 40px; }
       .r-lantern-l { left: 5px; }
       .r-lantern-r { right: 5px; }
-      .r-ad-wrap {
-        transform: scale(0.72);
-        max-height: 100px;
-      }
     }
   `;
   document.head.appendChild(style);
 };
 
-/* ─── SOCIAL BAR AD ─────────────────────────────────────────────── */
-const injectSocialBar = () => {
-  if (document.getElementById("adsterra-sb")) return;
+/* ─── MONETAG MULTITAG ──────────────────────────────────────────── */
+const injectMoneTag = () => {
+  if (document.getElementById("monetag-multitag")) return;
   const s = document.createElement("script");
-  s.id = "adsterra-sb";
-  s.src =
-    "https://pl28950654.profitablecpmratenetwork.com/23/86/75/238675c51ceab6e0ccf50cff2889df60.js";
+  s.id = "monetag-multitag";
+  s.src = "https://quge5.com/88/tag.min.js";
+  s.setAttribute("data-zone", "221736");
   s.async = true;
+  s.setAttribute("data-cfasync", "false");
   document.head.appendChild(s);
-};
-
-/* ─── NATIVE BANNER AD — SIZE FIXED ────────────────────────────── */
-const NativeBannerAd = () => {
-  useEffect(() => {
-    const el = document.getElementById("container-9eac4bdba502a66fe92f84a24789345e");
-    if (!el || el.dataset.loaded) return;
-    el.dataset.loaded = "1";
-    const s = document.createElement("script");
-    s.async = true;
-    s.setAttribute("data-cfasync", "false");
-    s.src =
-      "https://pl28760265.profitablecpmratenetwork.com/9eac4bdba502a66fe92f84a24789345e/invoke.js";
-    el.appendChild(s);
-  }, []);
-
-  return (
-    <div className="r-ad-wrap">
-      <div id="container-9eac4bdba502a66fe92f84a24789345e" />
-    </div>
-  );
 };
 
 /* ─── STARS ─────────────────────────────────────────────────────── */
@@ -366,7 +330,6 @@ function WishPage() {
         </div>
 
         <Card>
-          {/* Arabic */}
           <div className="r-fadein" style={{ textAlign:"center" }}>
             <div style={{
               fontFamily:"'Scheherazade New',serif",
@@ -377,7 +340,6 @@ function WishPage() {
 
           <Ornament />
 
-          {/* From */}
           <div className="r-fadein-2" style={{ textAlign:"center", marginBottom:14 }}>
             <div style={{ color:"rgba(255,255,255,0.55)", fontSize:"clamp(12px,3.2vw,14px)" }}>
               💛 Ramadan Mubarak from
@@ -391,7 +353,6 @@ function WishPage() {
             }}>{decoded}</div>
           </div>
 
-          {/* Dua */}
           <div className="r-fadein-3" style={{
             background:"rgba(212,175,55,0.07)",
             border:"1px solid rgba(212,175,55,0.18)",
@@ -404,12 +365,8 @@ function WishPage() {
             </div>
           </div>
 
-          {/* ── NATIVE BANNER AD ── */}
-          <NativeBannerAd />
-
           <Ornament />
 
-          {/* Create yours */}
           <div className="r-fadein-4" style={{ marginBottom:11 }}>
             <div style={{ color:"rgba(255,255,255,0.4)", fontSize:"clamp(11px,2.8vw,12px)", marginBottom:7, textAlign:"center" }}>
               Apni wish banao 👇
@@ -431,7 +388,6 @@ function WishPage() {
             </div>
           </div>
 
-          {/* Share + Home */}
           <div style={{ display:"flex", gap:9, marginBottom:10 }}>
             <button className="r-btn" style={btnSecondary} onClick={share}>
               {copied ? "✅ Copied!" : "🔗 Share Karo"}
@@ -457,7 +413,7 @@ export default function App() {
   useEffect(() => {
     injectFonts();
     injectCSS();
-    injectSocialBar();
+    injectMoneTag(); // ← Monetag Multitag only
   }, []);
 
   return (
