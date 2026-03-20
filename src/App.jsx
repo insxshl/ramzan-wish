@@ -77,7 +77,17 @@ const injectCSS = () => {
     .r-btn:active { transform: scale(0.97); }
     .r-input:focus { outline: none; border-color: #FFD700; box-shadow: 0 0 0 3px rgba(255,215,0,0.2); }
 
-    .r-ad-wrap { margin: 14px auto; width: 100%; text-align: center; min-height: 50px; }
+    /* AD — fixed size, no overflow */
+    .r-ad-wrap {
+      margin: 10px auto;
+      width: 100%;
+      max-width: 400px;
+      max-height: 120px;
+      overflow: hidden;
+      border-radius: 8px;
+      transform: scale(0.82);
+      transform-origin: top center;
+    }
 
     @media (max-width: 480px) {
       .r-lbody { width: 32px; height: 68px; }
@@ -85,6 +95,10 @@ const injectCSS = () => {
       .r-lbase { width: 40px; }
       .r-lantern-l { left: 5px; }
       .r-lantern-r { right: 5px; }
+      .r-ad-wrap {
+        transform: scale(0.72);
+        max-height: 100px;
+      }
     }
   `;
   document.head.appendChild(style);
@@ -101,7 +115,7 @@ const injectSocialBar = () => {
   document.head.appendChild(s);
 };
 
-/* ─── NATIVE BANNER AD ──────────────────────────────────────────── */
+/* ─── NATIVE BANNER AD — SIZE FIXED ────────────────────────────── */
 const NativeBannerAd = () => {
   useEffect(() => {
     const el = document.getElementById("container-9eac4bdba502a66fe92f84a24789345e");
